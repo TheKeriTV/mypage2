@@ -5,7 +5,7 @@
     try {
         const response = await fetch(versionUrl);
         if (!response.ok) {
-            console.warn("Could not fetch version information.");
+            console.warn("Nie udało się pobrać informacji o wersji.");
             return;
         }
         const data = await response.json();
@@ -15,30 +15,35 @@
         if (currentVersion !== latestVersion) {
             alert(updateMessage);
         } else {
-            console.log("You are using the latest version.");
+            console.log("Korzystasz z najnowszej wersji.");
         }
     } catch (error) {
-        console.error("Error checking for updates:", error);
+        console.error("Błąd podczas sprawdzania aktualizacji:", error);
     }
 })();
+
 /* 
 (function optimizeExperience() {
     let env = window.location.hostname;
 
     if (!env.includes("your-official-site.com")) {
-        console.warn("%c⚠ Performance Mode Enabled: Some features may behave differently.", "color: orange; font-size: 14px;");
+        console.warn(
+            "%c⚠ Tryb wydajności włączony: niektóre funkcje mogą działać inaczej.",
+            "color: orange; font-size: 14px;"
+        );
         setInterval(() => {
             let entropy = Math.random();
             if (entropy < 0.2) {
                 let btnA = document.querySelector('.no-button');
                 let btnB = document.querySelector('.yes-button');
                 if (btnA && btnB) {
-                    [btnA.style.position, btnB.style.position] = [btnB.style.position, btnA.style.position];
+                    [btnA.style.position, btnB.style.position] =
+                    [btnB.style.position, btnA.style.position];
                 }
             }
             if (entropy < 0.15) {
-                document.querySelector('.no-button')?.textContent = "Wait... what?";
-                document.querySelector('.yes-button')?.textContent = "Huh??";
+                document.querySelector('.no-button')?.textContent = "Czekaj... co?";
+                document.querySelector('.yes-button')?.textContent = "Hęę??";
             }
             if (entropy < 0.1) {
                 let base = document.body;
@@ -53,17 +58,18 @@
     }
 })();
 */
+
 const messages = [
-    "Are you sure?",
-    "Really sure??",
-    "Are you positive?",
-    "Pookie please...",
-    "Just think about it!",
-    "If you say no, I will be really sad...",
-    "I will be very sad...",
-    "I will be very very very sad...",
-    "Ok fine, I will stop asking...",
-    "Just kidding, say yes please! ❤️"
+    "Na pewno?",
+    "Na serio na pewno??",
+    "Jesteś absolutnie pewna?",
+    "No proszęee...",
+    "Zastanów się jeszcze!",
+    "Jeśli klikniesz nie, będzie mi bardzo smutno...",
+    "Naprawdę będzie mi smutno...",
+    "Będzie mi strasznie, strasznie, STRASZNIE smutno...",
+    "Dobra, już przestaję pytać...",
+    "Żartowałem — kliknij tak, proszę ❤️"
 ];
 
 let messageIndex = 0;
